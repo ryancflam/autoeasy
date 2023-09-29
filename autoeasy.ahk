@@ -6,6 +6,7 @@ SetWorkingDir %A_ScriptDir%
 global delay_ms := 100
 Hotkey, ], easy_key
 Hotkey, [, reset_key
+Hotkey, \, reset_from_death_key
 
 easy()
 {
@@ -41,6 +42,20 @@ reset()
     send, {Enter}
 }
 
+reset_from_death()
+{
+    sleep, 1100
+    send, {Tab}
+    sleep, %delay_ms%
+    send, {Tab}
+    sleep, %delay_ms%
+    send, {Enter}
+    sleep, 1100
+    send, {Tab}
+    sleep, %delay_ms%
+    send, {Enter}
+}
+
 #IfWinActive, Minecraft
 {
     easy_key:
@@ -48,5 +63,8 @@ reset()
         return
     reset_key:
         reset()
+        return
+    reset_from_death_key:
+        reset_from_death()
         return
 }
