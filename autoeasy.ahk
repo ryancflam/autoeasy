@@ -8,52 +8,42 @@ Hotkey, ], easy_key
 Hotkey, [, reset_key
 Hotkey, \, reset_from_death_key
 
+press_key(key, delay_after := 0, delay_before := 0)
+{
+    sleep, %delay_before%
+    send, {%key%}
+    sleep, %delay_after%
+}
+
 easy()
 {
-    send, {Esc}
-    sleep, %delay_ms%
-    send, {Tab}
-    sleep, %delay_ms%
-    send, {Tab}
-    sleep, %delay_ms%
-    send, {Tab}
-    sleep, %delay_ms%
-    send, {Enter}
-    sleep, %delay_ms%
-    send, {Tab}
-    sleep, %delay_ms%
-    send, {Tab}
-    sleep, %delay_ms%
-    send, {Enter}
-    sleep, %delay_ms%
-    send, {Enter}
-    sleep, %delay_ms%
-    send, {Enter}
-    sleep, %delay_ms%
-    send, {Esc}
+    press_key("Esc", delay_ms)
+    press_key("Tab", delay_ms)
+    press_key("Tab", delay_ms)
+    press_key("Tab", delay_ms)
+    press_key("Enter", delay_ms)
+    press_key("Tab", delay_ms)
+    press_key("Tab", delay_ms)
+    press_key("Enter", delay_ms)
+    press_key("Enter", delay_ms)
+    press_key("Enter", delay_ms)
+    press_key("Esc")
 }
 
 reset()
 {
-    send, {Esc}
-    sleep, %delay_ms%
-    send, {Tab} 
-    sleep, %delay_ms%
-    send, {Enter}
+    press_key("Esc", delay_ms)
+    press_key("Tab", delay_ms)
+    press_key("Enter")
 }
 
 reset_from_death()
 {
-    sleep, (1000 + delay_ms)
-    send, {Tab}
-    sleep, %delay_ms%
-    send, {Tab}
-    sleep, %delay_ms%
-    send, {Enter}
-    sleep, (1000 + delay_ms)
-    send, {Tab}
-    sleep, %delay_ms%
-    send, {Enter}
+    press_key("Tab", delay_ms, (1000 + delay_ms))
+    press_key("Tab", delay_ms)
+    press_key("Enter", (1000 + delay_ms))
+    press_key("Tab", delay_ms)
+    press_key("Enter")
 }
 
 #IfWinActive, Minecraft
