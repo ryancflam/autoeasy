@@ -3,7 +3,7 @@
 SendMode Input
 SetWorkingDir %A_ScriptDir%
 
-global delay_ms := 100
+Global delay_ms := 100
 Hotkey ], easy_key
 Hotkey [, reset_key
 Hotkey \, reset_from_death_key
