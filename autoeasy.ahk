@@ -3,10 +3,7 @@
 SendMode Input
 SetWorkingDir %A_ScriptDir%
 
-Global delay_ms := 100
-Hotkey ], easy_key
-Hotkey [, reset_key
-Hotkey \, reset_from_death_key
+Global delay_ms := 100  ; Key delay in ms
 
 press_key(key, presses := 1, delay_after := 0, delay_before := 0)
 {
@@ -46,13 +43,13 @@ reset_from_death()
 
 #IfWinActive, Minecraft
 {
-    easy_key:
+    ]::  ; Press ] to switch to Easy
         easy()
         return
-    reset_key:
+    [::  ; Press [ to save and quit
         reset()
         return
-    reset_from_death_key:
+    \::  ; Press \ to save and quit from death screen
         reset_from_death()
         return
 }
