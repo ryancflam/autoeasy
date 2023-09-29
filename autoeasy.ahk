@@ -44,13 +44,13 @@ reset()
 
 reset_from_death()
 {
-    sleep, 1100
+    sleep, (1000 + delay_ms)
     send, {Tab}
     sleep, %delay_ms%
     send, {Tab}
     sleep, %delay_ms%
     send, {Enter}
-    sleep, 1100
+    sleep, (1000 + delay_ms)
     send, {Tab}
     sleep, %delay_ms%
     send, {Enter}
