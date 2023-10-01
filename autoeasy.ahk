@@ -35,10 +35,8 @@ reset()
 reset_from_death()
 {
     press_key("Tab", 1, delay_ms, (1000 + delay_ms))
-    press_key("Tab", 1, delay_ms)
-    press_key("Enter", 1, (1000 + delay_ms))
-    press_key("Tab", 1, delay_ms)
-    press_key("Enter")
+    press_key("Enter", 1, delay_ms)
+    reset()
 }
 
 #IfWinActive, Minecraft
